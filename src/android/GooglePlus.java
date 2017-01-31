@@ -315,7 +315,8 @@ public class GooglePlus extends CordovaPlugin implements GoogleApiClient.OnConne
                                 GoogleAuthUtil.clearToken (context, lastAccessToken); 
                                 lastAccessToken = null;
                             }
-
+                            
+                            //new Account(context, Account, "oauth2:"+ARGUMENT_SCOPES)で作り直してテストする
                             accessToken = GoogleAuthUtil.getToken(context, acct.getEmail(), "oauth2:profile email");
                         } catch (Exception e) {
                             Log.e(TAG, "getToken Error: " + e.toString());
